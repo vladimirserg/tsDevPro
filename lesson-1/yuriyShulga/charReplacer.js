@@ -1,33 +1,34 @@
 (() => {
-    const text = '1s1tar3t 2   hell1ow';
+    const charReplacer = text => {
+        const words = text.trim().split(/\s/);
+        let _symbols, _letters, charSet, res = [];
 
-    const charRepl = text => {
-        const anyWhitespace = /\s+/;
-        const char = /[a-zA-Z]/;
-        const arr = text.trim().split(anyWhitespace);
-
-        let result = '';
-        let first, last, tmp;
-        let charSet;
-
-        for(let val of arr) {
+        for(let word of words) {
             
-            charSet = val.split('');
-            console.log(charSet);
-            for (let i = 0; i < charSet.length; i++) {
-                if(char.test(charSet[i])) {
-                    first = charSet[i];
+            charSet = word.split('');
+            _letters = [];
+            _symbols = {};
 
+            charSet.forEach((elem, index) => {
+                if(/[a-zA-Z]/.test(elem)) {
+                    _letters.push(elem);
+                } else {
+                    _symbols[index] = elem;
                 }
+            });
+
+            _letters = _letters.reverse();
+
+            for (let index in _symbols) {
+                _letters.splice(index, 0, _symbols[index]);
             }
-
-
+            
+            res.push(_letters.join(''));
         }
 
-
+        return res.join(' ');
     }
     
-    charRepl(text);
-
-
+    let replaced = charReplacer('s1ta$%r3t 2 hel^low');
+    console.log(replaced);    // t1ra$%t3s 2 wol^leh
 })();
