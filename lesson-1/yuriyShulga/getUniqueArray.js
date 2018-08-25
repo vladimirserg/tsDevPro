@@ -1,6 +1,5 @@
 (() => {
-    const getUnique = arr => Array.isArray(arr) ? Array.from(new Set(arr)) : false;
+    const getUnique = (...arr) => arr.lenght !== 0 ? Array.from(new Set(arr)) : new Error('Wrong args.');
     
-    const arr = [1, 1, 2, 2, 3, 4, 5, 5, 4];
-    console.log(getUnique(arr));
+    console.log(getUnique(1, 1, 2, 2, 3, 4, 5, 4));
 })();
