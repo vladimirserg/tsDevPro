@@ -46,6 +46,17 @@ function getUnique() {
 console.log(getUnique(4,5,6,6,4,2,1));
 
 // Task 4
-function converting() {
-    
+function policeTurn(sentence) {
+    let word = sentence.split(' ');
+    let symb = [];
+    for(let syn of  word){
+        symb.push(syn);
+    }
+    console.log(symb.reverse());
 }
+
+let sentence1 = 's1tar3t 2 hellow';
+let sentence2 = 's1ta$%r3t 2 hel^low';
+let sentence3 = 's1tar3t 2   low5';
+
+policeTurn(sentence1);
