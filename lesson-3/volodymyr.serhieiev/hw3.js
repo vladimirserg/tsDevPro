@@ -10,7 +10,7 @@ console.log(next('h1'));
 /*2) Реализовать функцию addClass(node, classToAdd). Класс не должен добавляться, если у элемента уже есть такой. */
 function addClass(node, classToAdd) {
     let el = document.querySelector(node);
-    if(!el.hasAttribute('class', classToAdd)){
+    if (!el.hasAttribute('class', classToAdd)) {
         el.setAttribute('class', classToAdd)
     }
 }
@@ -21,9 +21,8 @@ addClass('h2', 'cover-heading');
  Если классов несколько, должны быть удалены все. */
 function removeClass(node, classToRemove) {
     let el = document.querySelectorAll(node);
-    console.log(el);
     el.forEach(element => {
-        if(element.hasAttribute('class', classToRemove)){
+        if (element.hasAttribute('class', classToRemove)) {
             element.removeAttribute('class', classToRemove)
         }
     });
@@ -52,9 +51,23 @@ console.log(hasClass('ul', 'inner'), hasClass('h2', 'cover-heading'));
  Второй и третий аргументы не обязательные. Значения по умолчанию для них - ul и li. listData - массив.
   Может содержать как элементы (текст), так и массивы элементов. Вложенность - любая.
  */
-function createList(listData, listContainer, itemContainer) {
-    console.log(listData, listContainer, itemContainer);
+function createList(listData, listContainer = 'ul', itemContainer = 'li') {
+    if (listData.lenght === 0) {
+        return false;
+    }
+
+    let list = document.querySelector('.pre-footer').appendChild(document.createElement(listContainer));
+    console.log(list);
+    listData.forEach(elem => {
+        console.log(elem, Array.isArray(elem));
+        if (elem.isArray) {
+            createList(elem);
+            // list.appendChild(document.createElement(itemContainer)).textContent(elem);
+        } else {
+            list.appendChild(document.createElement(itemContainer)).textContent = elem;
+        }
+    });
     return true;
 }
 
-console.log(createList(['text', [1,2,3,4]]));
+console.log(createList(['text', [1, 2, 3, 4]]));

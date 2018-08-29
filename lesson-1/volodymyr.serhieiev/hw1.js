@@ -43,12 +43,31 @@ console.log(getUnique(1, 8, 20, 3, 6, 9, 1, 9, 22));
       s1tar3t 2   low5  ->  t1rat3s 2   wol5
 */
 function unfoldLetters(str){
-    let pattern = /w+/;
+    let arr = str.split(' ');
+    for (const i of arr) {
+        
+    }
+    aelement => {
+        if(element.test(/^\w+$/)){
+            element.slice('').reverse();
+        }
+    });
+    if(arr.){
+
+    }
+    // .map((letter) => {
+    //     // if(letter.test(/\d/)){
+    //     //     return letter;
+    //     // }
+    // });
+    console.log(arr);
 
     return;
 }
 
 console.log(unfoldLetters('s1tar3t 2 hellow'));
+// console.log(unfoldLetters('s1ta$%r3t 2 hel^low'));
+// console.log(unfoldLetters('s1tar3t 2   low5'));
 
 
 function lettersEntry(str){
