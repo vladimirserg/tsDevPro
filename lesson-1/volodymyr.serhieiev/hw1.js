@@ -49,3 +49,23 @@ function unfoldLetters(str){
 }
 
 console.log(unfoldLetters('s1tar3t 2 hellow'));
+
+
+function lettersEntry(str){
+    let res = '';
+    let counter = 1;
+    for(let i = 0; i < str.length; i++){
+        console.log(str[i]);
+        if(str[i] === str[i+1]){
+            counter++;
+            res += counter + str[i];
+        }else{
+            counter = 1;
+            res += counter + str[i];
+        }
+    }
+    console.log(counter);
+    return res;
+}
+
+console.log(lettersEntry('aaabbcdddd'));
