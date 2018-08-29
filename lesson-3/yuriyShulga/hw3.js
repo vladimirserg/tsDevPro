@@ -14,8 +14,8 @@
         return node.classList.add(classToAdd);
     }
 
-    const removeClass = (node, ...classesToRemove) => {
-        classesToRemove.forEach(toRemove => {
+    const removeClass = (node, classToRemove) => {
+        classToRemove.split(' ').forEach(toRemove => {
             if(Array.prototype.includes.call(node.classList, toRemove)) {
                 node.classList.remove(toRemove);
             }
@@ -28,7 +28,9 @@
     }
 
     const closest = (node, testFunc) => {
-        if(node.parentElement === null) return null;
+        if(node.parentElement === null) {
+            return null;
+        }
 
         if(!testFunc(node.parentElement)) {
             return closest(node.parentElement, testFunc);
