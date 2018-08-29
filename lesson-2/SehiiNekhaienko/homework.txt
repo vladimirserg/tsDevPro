@@ -1,0 +1,5 @@
+1) телефон (123)-123-1231, 2331231234, 123-123-1231
+2) url
+3) twitter name
+4) email
+5) Name Surname (Name Surname SecondName)
