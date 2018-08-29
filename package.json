@@ -1,0 +1,25 @@
+{
+  "name": "jsDevPro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.21"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NepipenkoIgor/tsDevPro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NepipenkoIgor/tsDevPro/issues"
+  },
+  "homepage": "https://github.com/NepipenkoIgor/tsDevPro#readme"
+}
