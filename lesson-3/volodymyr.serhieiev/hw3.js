@@ -2,10 +2,18 @@
 1) Реализовать функцию next(node), которая вернет следующий узел, не учитывая текстовые узлы и узлы комментариев.
 */
 function next(node) {
-    return document.querySelector(node).nextElementSibling;
+    try{
+        let nextNode = document.querySelector(node).nextElementSibling;
+        if(nextNode.nodeType !== 3 && nextNode.nodeType !== 8){
+            return nextNode;
+        }
+        return next(node);
+    }catch{
+       return `Node not found!`;
+    }
 }
 
-console.log(next('h1'));
+// console.log(next(), next('h5'), next('h1'));
 
 /*2) Реализовать функцию addClass(node, classToAdd). Класс не должен добавляться, если у элемента уже есть такой. */
 function addClass(node, classToAdd) {
@@ -15,7 +23,7 @@ function addClass(node, classToAdd) {
     }
 }
 
-addClass('h2', 'cover-heading');
+// addClass('h2', 'cover-heading');
 
 /*3) Реализовать функцию removeClass(node, classToRemove). Удаление несуществующего класса не должно приводить к ошибке.
  Если классов несколько, должны быть удалены все. */
@@ -28,14 +36,14 @@ function removeClass(node, classToRemove) {
     });
 }
 
-removeClass('div', 'inner');
+// removeClass('div', 'inner');
 
 /* 4)Реализовать функцию hasClass(node, classToCheck), которая вернет true, если у node есть класс classToCheck */
 function hasClass(node, classToCheck) {
     return document.querySelector(node).hasAttribute('class', classToCheck);
 }
 
-console.log(hasClass('ul', 'inner'), hasClass('h2', 'cover-heading'));
+// console.log(hasClass('ul', 'inner'), hasClass('h2', 'cover-heading'));
 
 /*5)Реализовать функцию closest(node, testFunc), которая вернет первого родителя,
  для которого testFunc вернет true. В testFunc получает аргументом DOM узел. Сам DOM узел node тоже проверять.
@@ -45,7 +53,7 @@ function closest(node, testFunc) {
     return true;
 }
 
-console.log(hasClass('ul', 'inner'), hasClass('h2', 'cover-heading'));
+// console.log(hasClass('ul', 'inner'), hasClass('h2', 'cover-heading'));
 
 /*6)Релизовать функцию createList(listData, listContainer, itemContainer), возвращаюшую узел списка. Использовать innerHTML нельзя.
  Второй и третий аргументы не обязательные. Значения по умолчанию для них - ul и li. listData - массив.
@@ -70,4 +78,4 @@ function createList(listData, listContainer = 'ul', itemContainer = 'li') {
     return true;
 }
 
-console.log(createList(['text', [1, 2, 3, 4]]));
+// console.log(createList(['text', [1, 2, 3, 4]]));
