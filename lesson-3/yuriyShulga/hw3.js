@@ -55,7 +55,7 @@
             if(typeof elem === 'string') {
                 li.textContent = elem;
             } else {
-                li.appendChild(createList(elem));
+                li = createList(elem);
             }
             list.appendChild(li);
         });
