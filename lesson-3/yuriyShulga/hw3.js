@@ -47,7 +47,6 @@
         let li, list = document.createElement(listContainer);
 
         listData.forEach(elem => {
-            console.log(!Array.isArray(elem));
             if(typeof elem !== 'string' && !Array.isArray(elem)) {
                 throw new Error(`Wrong type of arg: ${elem}`);
             }
