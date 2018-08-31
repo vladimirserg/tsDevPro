@@ -43,26 +43,44 @@ console.log(getUnique(1, 8, 20, 3, 6, 9, 1, 9, 22));
       s1tar3t 2   low5  ->  t1rat3s 2   wol5
 */
 function unfoldLetters(str){
-    let arr = str.split(' ');
-    for (const i of arr) {
-        
-    }
-    aelement => {
-        if(element.test(/^\w+$/)){
-            element.slice('').reverse();
+    let arr = str.split(/\s/);
+    let res = [];
+
+    for(let i = 0; i < arr.length; i++){
+        let words = [];
+        let sym = [];
+
+        if(/^[a-zA-Z]+$/.test(arr[i])){
+            res.push(arr[i].split('').reverse().join(''));
+            continue;
         }
-    });
-    if(arr.){
 
+        if(/^\d+$/.test(arr[i])){
+            res.push(arr[i]);
+            continue;
+        }
+
+        let temp = arr[i].split('');
+        console.log(temp);
+        // let arr temp.map();
+
+        temp.forEach((el,i) => {
+            if(/^[a-zA-Z]+$/.test(el)){
+                words.push(el);
+            }else{
+                sym[i] = el;
+            }
+        });
+        words.reverse();
+
+        for (let i in temp) {
+            temp.splice(i, 0, words[i]);
+        }
+        
+        res.push(words.join(''));
     }
-    // .map((letter) => {
-    //     // if(letter.test(/\d/)){
-    //     //     return letter;
-    //     // }
-    // });
-    console.log(arr);
-
-    return;
+    // console.log(words);
+    return res.join(' ');
 }
 
 console.log(unfoldLetters('s1tar3t 2 hellow'));

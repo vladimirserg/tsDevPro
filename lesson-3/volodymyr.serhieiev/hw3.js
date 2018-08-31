@@ -7,7 +7,7 @@ function next(node) {
         if(nextNode.nodeType !== 3 && nextNode.nodeType !== 8){
             return nextNode;
         }
-        return next(node);
+        return node;
     }catch{
        return `Node not found!`;
     }
