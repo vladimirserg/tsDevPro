@@ -1,0 +1,25 @@
+body {
+    background-color: azure
+}
+
+ul, ol {
+    display: table;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 20px;
+    color: #0099ff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    letter-spacing: 1px
+}
+
+li:hover {
+    cursor: pointer;
+    color: #007acc;
+    font-weight: 900;
+    text-decoration-line: underline
+}
+
+.hidden {
+    display: none
+}
