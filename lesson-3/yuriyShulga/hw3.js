@@ -2,30 +2,29 @@
     const next = node => {
         let nextElem = node.nextElementSibling;
         if(nextElem === null) {
-            return node.parentElement.children[0];
+            return null; 
         }
         return nextElem.nodeType === 1 ? nextElem : next(nextElem);
     }
 
     const addClass = (node, classToAdd) => {
-        if(Array.prototype.includes.call(node.classList, classToAdd)) {
-            throw new Error(`Class ${classToAdd} is already exists`);
+        if(node.classList.contains(classToAdd)) {
+            throw new Error(`Class ${classToAdd} is already exists`); // or just return node;
         }
         return node.classList.add(classToAdd);
     }
 
     const removeClass = (node, classToRemove) => {
         classToRemove.split(' ').forEach(toRemove => {
-            if(Array.prototype.includes.call(node.classList, toRemove)) {
+            if(node.classList.contains(toRemove)) {
                 node.classList.remove(toRemove);
             }
+            return node; // for chaining
         });
         
     } 
 
-    const hasClass = (node, classToCheck) => {
-        return Array.prototype.includes.call(node.classList, classToCheck);
-    }
+    const hasClass = (node, classToCheck) => node.classList.contains(classToCheck);
 
     const closest = (node, testFunc) => {
         if(node.parentElement === null) {
