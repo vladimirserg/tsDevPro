@@ -29,7 +29,7 @@ console.log(summator(1, 8, 20, 3, 6, 9));
     Порядок элементов результирующего массива должен совпадать с порядком,
     в котором они встречаются в оригинальной структуре.
 */
-function getUnique(...args){
+function getUnique(...args) {
     return [...new Set(args)];
 }
 
@@ -42,61 +42,62 @@ console.log(getUnique(1, 8, 20, 3, 6, 9, 1, 9, 22));
       s1ta$%r3t 2 hel^low  ->  t1ra$%t3s 2 wol^leh
       s1tar3t 2   low5  ->  t1rat3s 2   wol5
 */
-function unfoldLetters(str){
+function unfoldLetters(str) {
     let arr = str.split(/\s/);
     let res = [];
 
-    for(let i = 0; i < arr.length; i++){
-        let words = [];
-        let sym = [];
+    for (let i = 0; i < arr.length; i++) {
+        let letters = [];
+        let reverted = [];
 
-        if(/^[a-zA-Z]+$/.test(arr[i])){
+        if (/^[a-zA-Z]+$/.test(arr[i])) {
             res.push(arr[i].split('').reverse().join(''));
             continue;
         }
 
-        if(/^\d+$/.test(arr[i])){
+        if (/^\d+$/.test(arr[i])) {
             res.push(arr[i]);
             continue;
         }
 
-        let temp = arr[i].split('');
-        console.log(temp);
-        // let arr temp.map();
-
-        temp.forEach((el,i) => {
-            if(/^[a-zA-Z]+$/.test(el)){
-                words.push(el);
-            }else{
-                sym[i] = el;
+        arr[i].split('').forEach((el) => {
+            if (/^[a-zA-Z]+$/.test(el)) {
+                letters.push(el);
             }
         });
-        words.reverse();
 
-        for (let i in temp) {
-            temp.splice(i, 0, words[i]);
-        }
-        
-        res.push(words.join(''));
+        letters.reverse();
+
+        let j = 0;
+        arr[i].split('').forEach((val, index) => {
+            if (/^[a-zA-Z]+$/.test(val)) {
+                reverted.push(letters[j]);
+                j++;
+            } else {
+                reverted.push(val);
+            }
+        });
+
+        res.push(reverted.join(''));
     }
-    // console.log(words);
+
     return res.join(' ');
 }
 
-console.log(unfoldLetters('s1tar3t 2 hellow'));
+// console.log(unfoldLetters('s1tar3t 2 hellow'));
 // console.log(unfoldLetters('s1ta$%r3t 2 hel^low'));
-// console.log(unfoldLetters('s1tar3t 2   low5'));
+console.log(unfoldLetters('s1tar3t 2   low5'));
 
 
-function lettersEntry(str){
+function lettersEntry(str) {
     let res = '';
     let counter = 1;
-    for(let i = 0; i < str.length; i++){
+    for (let i = 0; i < str.length; i++) {
         console.log(str[i]);
-        if(str[i] === str[i+1]){
+        if (str[i] === str[i + 1]) {
             counter++;
             res += counter + str[i];
-        }else{
+        } else {
             counter = 1;
             res += counter + str[i];
         }
