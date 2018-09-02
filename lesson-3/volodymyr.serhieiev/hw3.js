@@ -2,14 +2,14 @@
 1) Реализовать функцию next(node), которая вернет следующий узел, не учитывая текстовые узлы и узлы комментариев.
 */
 function next(node) {
-    try{
+    try {
         let nextNode = document.querySelector(node).nextElementSibling;
-        if(nextNode.nodeType !== 3 && nextNode.nodeType !== 8){
+        if (nextNode.nodeType !== 3 && nextNode.nodeType !== 8) {
             return nextNode;
         }
         return node;
-    }catch{
-       return `Node not found!`;
+    } catch{
+        return `Node not found!`;
     }
 }
 
@@ -49,11 +49,20 @@ function hasClass(node, classToCheck) {
  для которого testFunc вернет true. В testFunc получает аргументом DOM узел. Сам DOM узел node тоже проверять.
   Если ни один из родителей не подошел, функция возвращает null */
 function closest(node, testFunc) {
-    // if(){};
-    return true;
+    let elem = document.querySelector(node).parentElement;
+
+    if (elem !== null) {
+        return elem;
+    }
+
+    if (!testFunc(elem)) {
+        return closest(elem, testFunc);
+    }
+
+    return null;
 }
 
-// console.log(hasClass('ul', 'inner'), hasClass('h2', 'cover-heading'));
+// console.log(closest('ul'), closest('h2'));
 
 /*6)Релизовать функцию createList(listData, listContainer, itemContainer), возвращаюшую узел списка. Использовать innerHTML нельзя.
  Второй и третий аргументы не обязательные. Значения по умолчанию для них - ul и li. listData - массив.
@@ -64,18 +73,16 @@ function createList(listData, listContainer = 'ul', itemContainer = 'li') {
         return false;
     }
 
-    let list = document.querySelector('.pre-footer').appendChild(document.createElement(listContainer));
-    console.log(list);
+    let list = document.createElement(listContainer);
     listData.forEach(elem => {
-        console.log(elem, Array.isArray(elem));
-        if (elem.isArray) {
-            createList(elem);
-            // list.appendChild(document.createElement(itemContainer)).textContent(elem);
+        if (Array.isArray(elem)) {
+            list.appendChild(createList(elem));
         } else {
             list.appendChild(document.createElement(itemContainer)).textContent = elem;
         }
     });
-    return true;
+
+    return list;
 }
 
-// console.log(createList(['text', [1, 2, 3, 4]]));
+// console.log(createList(['text', [1, 2, 3, 4, ['test', 'lorem', 'ipsum']]]));
