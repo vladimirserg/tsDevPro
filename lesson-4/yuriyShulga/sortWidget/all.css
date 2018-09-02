@@ -1,0 +1,28 @@
+body {
+    font-family: 'Colibri', sans-serif;
+    font-size: 18px;
+    
+}
+.people {
+    margin: 70px auto;
+    border: 2px solid rgba(3, 70, 114, 0.856);
+    border-collapse: collapse;
+    table-layout: auto; 
+    
+}
+
+.people td,th{
+    border: 2px solid rgba(3, 70, 114, 0.856);
+    text-align: center;
+    padding: 6px 14px;
+}
+
+.people th {
+    background-color: rgba(3, 6, 168, 0.979);
+    color: white;
+    cursor: pointer
+}
+
+.people th:hover {
+    color: rgb(0, 195, 255);
+}
