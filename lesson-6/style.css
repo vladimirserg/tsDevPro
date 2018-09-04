@@ -1,0 +1,6 @@
+input:invalid { background-color: red }
+input:valid { background-color: green }
+/*input:required  { background-color: orange }*/
+/*input:optional  { background-color: orange }*/
+/*input:in-range  { background-color: orange }*/
+/*input:out-of-range { background-color: orange }*/
