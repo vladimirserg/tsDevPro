@@ -7,27 +7,16 @@
 const list = document.querySelector('.list');
 
 list.addEventListener('click', function (e) {
-    if (target.nodeName === 'UL') {
-        target.classList.remove('d-none');
-        // console.log(parent);
-    }
-});
-
-document.querySelector('li').addEventListener('mouseenter', function (e) {
     let target = e.target;
-    if (target.nodeName === 'LI') {
-        target.classList.add('bold');
-        // console.log(parent);
+    console.log(target.parentNode);
+    if (target.parentNode.nextSunextSiblingling.nodeName === 'UL') {
+        if(target.parentNode.nextSibling.classList.contains('d-none')){
+            target.classList.remove('d-none');
+        }else{
+            target.classList.add('d-none');
+        }   
     }
-
-});
-
-document.querySelector('li').addEventListener('mouseleave', function (e) {
-    let target = e.target;
-    if (target.nodeName === 'LI' && target.classList.contains('bold')) {
-        target.classList.remove('bold');
-        // console.log(parent);
-    }
+    return;
 });
 
 /* 2 Дан список сообщений. Добавьте каждому сообщению кнопку для его удаления.
@@ -50,7 +39,7 @@ let commentsList = document.querySelector('.comments');
 commentsList.addEventListener('click', function (e) {
     let target = e.target;
     console.log(target.parentNode);
-    if(target.classList.contains('close')){
+    if (target.classList.contains('close')) {
         /* hide */
         target.parentNode.parentNode.classList.add('d-none');
         /* remove */
@@ -62,42 +51,29 @@ commentsList.addEventListener('click', function (e) {
 /* 3 Сделать сортировку таблицы при клике на заголовок.
 Требования: Использовать делегирование.Код не должен меняться при увеличении количества столбцов или строк.
  */
-const table = document.querySelector('table');
+const thead = document.querySelector('thead');
 
-table.addEventListener('click', function (e) {
+thead.addEventListener('click', function (e) {
     let target = e.target;
     if (target.nodeName === 'TH') {
-        let asc = 1;
-        let key;
-        let rows = table.rows;
-        let parent = e.target.parentNode;
-        console.log(parent.children);
+        let columnIndex = target.cellIndex;
+        let tbody = target.parentNode.parentNode.parentNode.childNodes[3];
+        let rows = Array.prototype.slice.call(tbody.rows);
 
-        let k = 0;
-        for (let item of parent.children) {
-            if(item.innerHTML === target.innerHTML){
-                key = k;
-            }
-            k++;
+        if (target.classList.contains('number')) {
+            rows.sort(function (a, b) {
+                return b.cells[columnIndex].innerHTML - a.cells[columnIndex].innerHTML;
+            });
+        } else {
+            rows.sort(function (a, b) {
+                return a.cells[columnIndex].innerHTML.toLowerCase() > b.cells[columnIndex].innerHTML.toLowerCase();
+            });
         }
 
-        for (let i = 1; i < rows.length; i++) {
-            for (let j = 1; j < (rows.length - i - 1); j++) {
-                console.log(rows[j].getElementsByTagName("TD")[key].innerHTML);
-                if (asc) {
-                    if (rows[j].getElementsByTagName("TD")[key].innerHTML > rows[j + 1].getElementsByTagName("TD")[key].innerHTML) {
-                        console.log(rows[j].parentNode);
-                        rows[j].parentNode.insertBefore(rows[j + 1], rows[j]);
-                    }
-                } else {
-                    console.log(rows[j].getElementsByTagName("TD")[key].innerHTML.toLowerCase);
-                    if (rows[j].getElementsByTagName("TD")[key].innerHTML < rows[j + 1].getElementsByTagName("TD")[key].innerHTML) {
-                        console.log(rows[j].parentNode);
-                        rows[j].parentNode.insertAfter(rows[j + 1], rows[j]);
-                    }
-                }
-            }
+        for (var i = 0; i < rows.length; i++) {
+            tbody.appendChild(rows[i]);
         }
-        asc = 0;
-    }
+    };
+
+    return;
 });
