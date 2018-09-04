@@ -33,11 +33,30 @@ document.querySelector('li').addEventListener('mouseleave', function (e) {
 /* 2 Дан список сообщений. Добавьте каждому сообщению кнопку для его удаления.
 Используйте делегирование событий. Один обработчик для всего. */
 
-// console.log(document.button.querySelector('.close'));
-// .addEventListener('click', function (e) {
+/* add button to comment */
+// document.querySelector('.comments').addEventListener('click', function (e) {
 //     let target = e.target;
-//     console.log(target);
+//     let btn = document.createElement('button');
+//         btn.textContent = 'x';
+//         btn.classList.add('close', 'justify-content-end');
+
+//     if(target.classList.contains('comment') && target.childNodes[1].childNodes[5] == null){
+//         target.childNodes[1].appendChild(btn);
+//     }
 // });
+
+/* hide/remove block */
+let commentsList = document.querySelector('.comments');
+commentsList.addEventListener('click', function (e) {
+    let target = e.target;
+    console.log(target.parentNode);
+    if(target.classList.contains('close')){
+        /* hide */
+        target.parentNode.parentNode.classList.add('d-none');
+        /* remove */
+        //commentsList.removeChild(target.parentNode.parentNode);
+    }
+});
 
 
 /* 3 Сделать сортировку таблицы при клике на заголовок.
