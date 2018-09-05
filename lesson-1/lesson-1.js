@@ -1,11 +1,11 @@
 // console.log(a);
-const a = 1;
-
-for (let i = 0; i < 5; i += 1) {
-  setTimeout(() => {
-    console.log(i);
-  });
-}
+// const a = 1;
+//
+// for (let i = 0; i < 5; i += 1) {
+//   setTimeout(() => {
+//     console.log(i);
+//   });
+// }
 
 // const a = { b: 1 };
 // a.c = 1;

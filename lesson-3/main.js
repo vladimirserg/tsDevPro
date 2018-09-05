@@ -63,8 +63,8 @@
 
 /** **Measuring heights and widths */
 // el.offsetWidth/el.clientWidth/el.scrollWidth
-const p = document.querySelector('p');
-console.log(p.offsetWidth);
-console.log(p.clientWidth);
-/** * */
-console.log(p.getBoundingClientRect());
+// const p = document.querySelector('p');
+// console.log(p.offsetWidth);
+// console.log(p.clientWidth);
+// /** * */
+// console.log(p.getBoundingClientRect());

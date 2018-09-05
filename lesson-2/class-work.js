@@ -83,16 +83,16 @@
 // console.log(typeof String('asdaasd'))
 // console.log(typeof new String('asdaasd'))
 
-function spanThis(str, ...values) {
-  console.log(str, ...values);
-  return str.reduce((newStr, value, i) => {
-    if (!values[i]) {
-      return newStr;
-    }
-    newStr += `${value}<span>${values[i]}</span>`;
-    return newStr;
-  }, '');
-}
+// function spanThis(str, ...values) {
+//   console.log(str, ...values);
+//   return str.reduce((newStr, value, i) => {
+//     if (!values[i]) {
+//       return newStr;
+//     }
+//     newStr += `${value}<span>${values[i]}</span>`;
+//     return newStr;
+//   }, '');
+// }
 
 // let specialValue = "Jon";
 // let a = 7;
@@ -115,7 +115,7 @@ function spanThis(str, ...values) {
 // })
 // console.log(result);
 
-const pattern = /.(ts|tsx)$/;
-console.log(pattern.test('app-hello.ts'));
-console.log(pattern.test('app.tsx'));
-console.log(pattern.test('app.js'));
+// const pattern = /.(ts|tsx)$/;
+// console.log(pattern.test('app-hello.ts'));
+// console.log(pattern.test('app.tsx'));
+// console.log(pattern.test('app.js'));

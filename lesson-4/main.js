@@ -118,28 +118,28 @@
 
 
 /** Work with events from code */
-const button1 = document.querySelector('.button1');
-const button2 = document.querySelector('.button2');
-button1.addEventListener('click3', (e) => {
-  console.log(`clicked button 1 ${e.detail.text}`);
-});
-button2.addEventListener('click', () => {
-  // old
-  // const event = document.createEvent('Event');
-  // event.initEvent('click', true, true);
-  // button1.dispatchEvent(event);
-  //
-  // new
-  // const event = new Event('click3');
-  // button1.dispatchEvent(event);
-  //
-  // with custom context
-  const event = new CustomEvent('click3', { detail: { text: 'i love JS' } });
-  button1.dispatchEvent(event);
-});
-
-setTimeout(() => {
-  const event = document.createEvent('Event');
-  event.initEvent('click3', true, true);
-  button1.dispatchEvent(event);
-}, 3000);
+// const button1 = document.querySelector('.button1');
+// const button2 = document.querySelector('.button2');
+// button1.addEventListener('click3', (e) => {
+//   console.log(`clicked button 1 ${e.detail.text}`);
+// });
+// button2.addEventListener('click', () => {
+// old
+// const event = document.createEvent('Event');
+// event.initEvent('click', true, true);
+// button1.dispatchEvent(event);
+//
+// new
+// const event = new Event('click3');
+// button1.dispatchEvent(event);
+//
+// with custom context
+//   const event = new CustomEvent('click3', { detail: { text: 'i love JS' } });
+//   button1.dispatchEvent(event);
+// });
+//
+// setTimeout(() => {
+//   const event = document.createEvent('Event');
+//   event.initEvent('click3', true, true);
+//   button1.dispatchEvent(event);
+// }, 3000);
