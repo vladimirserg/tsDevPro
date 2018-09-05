@@ -1,11 +1,11 @@
 // console.log(a);
-// let a = 1;
+const a = 1;
 
-// for (let i = 0; i < 5; i++) {
-//     setTimeout(() => {
-//         console.log(i);
-//     })
-// }
+for (let i = 0; i < 5; i += 1) {
+  setTimeout(() => {
+    console.log(i);
+  });
+}
 
 // const a = { b: 1 };
 // a.c = 1;
@@ -38,8 +38,8 @@
 //        }
 //     }
 
-//     return 
-//     //code 
+//     return
+//     //code
 // }
 
 // let a = {
@@ -62,7 +62,7 @@
 //         }
 //     }
 // }
-//let a = Boolean(b);
+// let a = Boolean(b);
 // let dc = [1, , 2].filter(Boolean)
 // console.log(dc)
 
@@ -80,7 +80,7 @@
 // function b (c=1){
 //     console.log(c);
 // }
-//const a: ()=>{} = ()=>{}
+// const a: ()=>{} = ()=>{}
 // const a = {a:4}
 // Object.defineProperty(a, 'c', {
 //     get: function () {

@@ -1,4 +1,4 @@
-/****Maps ***/
+/** **Maps ** */
 // const u1 = { name: 'Cynthia' };
 // const u2 = { name: 'Jackson' };
 // const u3 = { name: 'Olive' };
@@ -36,7 +36,7 @@
 // userRoles.clear();
 // userRoles.size;
 
-/****Weak Maps ***/
+/** **Weak Maps ** */
 // const SecretHolder = (function() {
 //   const secrets = new WeakMap();
 //   return class {
@@ -56,7 +56,7 @@
 // console.log(b.getSecret()); // "secret B"
 
 
-/****Set ***/
+/** **Set ** */
 // const roles = new Set();
 // roles.add("User");
 // roles.add("Admin");
@@ -67,7 +67,7 @@
 // console.log(roles);
 // roles.delete("Admin");
 
-/****Weak Set ***/
+/** **Weak Set ** */
 
 // const naughty = new WeakSet();
 // const children = [
@@ -83,7 +83,7 @@
 //   }
 // }
 
-/****Iterators ***/
+/** **Iterators ** */
 // const book = [
 //   "Twinkle, twinkle, little bat!",
 //   "How I wonder what you're at!",
@@ -102,7 +102,7 @@
 //   current = it.next();
 // }
 
-/****Iterators protocol***/
+/** **Iterators protocol** */
 // class Log {
 //   constructor() {
 //     this.messages = [];
@@ -149,7 +149,7 @@
 // }
 
 
-/***/
+/** */
 // const phoneReg = /\(?\d{3}\)?-?\d{3}-?\d{4}/g;
 // console.log(phoneReg.test('(123)-222-2222'));
 // console.log(phoneReg.test('123-222-2222'));  // need to check
@@ -163,7 +163,7 @@
 // /^@?(\w+)$/
 // /^(?:https?:\/\/)?\w+(?:\.\w+)?(?:\.[A-Z]{2,3})+$/i
 
-/***/
+/** */
 // function revertSentence(sentence) {
 //   let wordsArr = sentence.replace(/\d*/g, '').split(' ');
 //   let revertLettersArr = wordsArr.map((word) => {

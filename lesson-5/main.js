@@ -34,10 +34,11 @@ const params = 'orem=ipsum&name=binny';
 
 fetch('http://localhost:8090/test', {
   method: 'POST',
-  body: params, headers: { 'Content-type': 'application/x-www-form-urlencoded' }
+  body: params,
+  headers: { 'Content-type': 'application/x-www-form-urlencoded' },
 })
-  .then((res) => res.json())
-  .then((data) => console.log(data))
+  .then(res => res.json())
+  .then(data => console.log(data));
 // fetch('http://localhost:8090/products', {
 //   method: 'GET',
 // })

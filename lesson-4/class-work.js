@@ -18,17 +18,17 @@
 // console.log(Date.now());
 // console.log(new Date(Date.now()));
 
-/**** creates dates from Unix Epoch**/
+/** ** creates dates from Unix Epoch* */
 // console.log(new Date(-365*24*60*60*1000));
 
 
-/*** parsing date strings**/
+/** * parsing date strings* */
 //
 // console.log(new Date('June 14, 1903')); // 12:00 A.M., Jun 14, 1903 local time
 // console.log(new Date('14 June, 1903 GMT-0000'));
 
 
-/*** Data to server**/
+/** * Data to server* */
 
 // const before = { d: new Date() };
 // console.log(before.d instanceof Date) // true
@@ -48,7 +48,7 @@
 // const d = new Date(after.d);
 // console.log(d);
 
-/**Displaying Dates*/
+/** Displaying Dates */
 
 // const d = new Date(Date.UTC(1930, 4, 10));
 // // these show output for someone in Los Angeles
@@ -65,7 +65,7 @@
 // console.log(moment(d).format("h:mm a"));
 
 
-/**Date Components***/
+/** Date Components** */
 
 // const d = new Date(Date.UTC(1815, 9, 10));
 // // these are the results someone would see in Los Angeles
@@ -89,8 +89,8 @@ const d2 = new Date(2009, 4, 27);
 // console.log(d1 < d2); // true
 
 
-/**Date Arithmetic**/
-  //const moment = require('moment');
+/** Date Arithmetic* */
+// const moment = require('moment');
 //  const msDiff = d2 - d1;
 //  console.log(msDiff)// 417740400000 ms
 // const daysDiff = msDiff/1000/60/60/24; // 4834.96 days
@@ -109,15 +109,16 @@ const d2 = new Date(2009, 4, 27);
 // // // or ascending:
 //  console.log(dates.sort((a, b) => a - b));
 const moment = require('moment');
+
 const m = moment(); // now
 m.add(3, 'days') // m is now three days in the future
-.subtract(2, 'years') // m is now two years minus three days in the past
-.startOf('year') // m is now Jan 1 of this year
-.endOf('month');
+  .subtract(2, 'years') // m is now two years minus three days in the past
+  .startOf('year') // m is now Jan 1 of this year
+  .endOf('month');
 //
 console.log(m.toDate());
 
-/***User-Friendly Relative Dates***/
+/** *User-Friendly Relative Dates** */
 
 // moment().subtract(10, 'seconds').fromNow(); // a few seconds ago
 // moment().subtract(44, 'seconds').fromNow(); // a few seconds ago
@@ -132,14 +133,14 @@ console.log(m.toDate());
 // moment().subtract(345, 'days').fromNow(); // a year ago
 
 
-/**Fixed Decimals**/
+/** Fixed Decimals* */
 // const x = 19.51;
 // x.toFixed(3); // "19.510"
 // x.toFixed(2); // "19.51"
 // x.toFixed(1); // "19.5"
 // x.toFixed(0); // "20"
 
-/**Exponential Notation**/
+/** Exponential Notation* */
 // const x = 3800.5;
 // x.toExponential(4); // "3.8005e+4";
 // x.toExponential(3); // "3.801e+4";
@@ -148,7 +149,7 @@ console.log(m.toDate());
 // x.toExponential(0); // "4e+4";
 
 
-/***Fixed Precision*/
+/** *Fixed Precision */
 // let x = 1000;
 // x.toPrecision(5); // "1000.0"
 // x.toPrecision(4); // "1000"
@@ -165,7 +166,7 @@ console.log(m.toDate());
 // x.toPrecision(1); // "2e+1"
 
 
-/*** Bases*/
+/** * Bases */
 // const x = 12;
 // x.toString(); // "12" (base 10)
 // x.toString(10); // "12" (base 10)
@@ -174,6 +175,6 @@ console.log(m.toDate());
 // x.toString(2); // "1100" (binary)
 
 
-/**Math Object*/
+/** Math Object */
 // console.log(Math.min(...[1,2,3]));
 // console.log(2**2)
