@@ -4,16 +4,16 @@
 Клик вне текста заголовка (на пустом месте) ничего делать не должен.
 При наведении на заголовок — он становится жирным, реализовать через CSS.
 При двойном клике на заголовке, его текст не должен выделяться.*/
-const list = document.querySelector('.list');
 
+const list = document.querySelector('.list');
 list.addEventListener('click', function (e) {
     let target = e.target;
-    console.log(target.parentNode);
-    if (target.parentNode.nextSunextSiblingling.nodeName === 'UL') {
-        if(target.parentNode.nextSibling.classList.contains('d-none')){
-            target.classList.remove('d-none');
+    let el = target.parentNode;
+    if (el.nextElementSibling !== null && el.nextElementSibling.nodeName === 'UL') {
+        if(el.nextElementSibling.classList.contains('d-none')){
+            el.nextElementSibling.classList.remove('d-none');
         }else{
-            target.classList.add('d-none');
+            el.nextElementSibling.classList.add('d-none');
         }   
     }
     return;
