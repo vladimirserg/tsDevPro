@@ -1,6 +1,11 @@
 {
     "extends": "airbnb-base",
+    "env": {
+        "browser": true,
+        "node": true
+    },
     "rules": {
-        "no-plusplus": "off"
+        "no-plusplus": "off",
+        "max-len": "off"
     }
 }
