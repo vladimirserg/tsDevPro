@@ -6,7 +6,7 @@
 
 const list = document.querySelector('.list');
 list.addEventListener('click', (e) => {
-  const target = e.EventTarget;
+  const target = e.target;
   const el = target.parentNode;
   if (el.nextElementSibling !== null && el.nextElementSibling.nodeName === 'UL') {
     if (el.nextElementSibling.classList.contains('d-none')) {
@@ -34,7 +34,7 @@ list.addEventListener('click', (e) => {
 /* hide/remove block */
 const commentsList = document.querySelector('.comments');
 commentsList.addEventListener('click', (e) => {
-  const target = e.EventTarget;
+  const target = e.target;
   if (target.classList.contains('close')) {
     /* hide */
     target.parentNode.parentNode.classList.add('d-none');
@@ -49,7 +49,7 @@ commentsList.addEventListener('click', (e) => {
  */
 const thead = document.querySelector('thead');
 thead.addEventListener('click', (e) => {
-  const target = e.EventTarget;
+  const target = e.target;
   if (target.nodeName === 'TH') {
     const columnIndex = target.cellIndex;
     const tbody = target.parentNode.parentNode.parentNode.childNodes[3];
