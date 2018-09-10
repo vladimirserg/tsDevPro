@@ -16,3 +16,7 @@
 *.launch
 .settings/
 *.sublime-workspace
+
+
+# Others
+.DS_Store
