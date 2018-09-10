@@ -9,10 +9,14 @@
 !.vscode/extensions.json
 
 # IDEs and editors
-/.idea
+.idea
 .project
 .classpath
 .c9/
 *.launch
 .settings/
 *.sublime-workspace
+
+
+# Others
+.DS_Store
