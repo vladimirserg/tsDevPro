@@ -114,7 +114,8 @@
 // addEventLogger(button, 'capture', 'stop!');
 // addEventLogger(button, 'bubble');
 
-/** Drag events, Focus events,Form event,Input device events,Media events,Progress events,Touch events */
+/** Drag events, Focus events,Form event,Input device
+ * events,Media events,Progress events,Touch events */
 
 
 /** Work with events from code */

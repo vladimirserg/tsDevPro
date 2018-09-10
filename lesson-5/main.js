@@ -19,7 +19,7 @@
 //
 // const http = new XMLHttpRequest();
 // const url = 'http://localhost:8090/test';
-const params = 'orem=ipsum&name=binny';
+// const params = 'orem=ipsum&name=binny';
 // http.open('POST', url);
 // //
 // //http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
