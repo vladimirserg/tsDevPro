@@ -1,4 +1,4 @@
-/**** Event Loop ****/
+/** ** Event Loop *** */
 // console.log('start')
 // setTimeout(()=>{
 //   console.log('timeout 1')
@@ -32,8 +32,7 @@
 // console.log('end')
 
 
-
-/**Add/remove event handler**/
+/** Add/remove event handler* */
 // function log1(e) {
 //   console.log('cliked 1')
 // }
@@ -57,7 +56,7 @@
 // }, 4000)
 
 
-/**Propagation**/
+/** Propagation* */
 //
 // function logEvent(handlerName, type, cancel,
 //   stop, stopImmediate
@@ -87,12 +86,12 @@
 // const body = document.querySelector('body');
 // const div = document.querySelector('div');
 // const button = document.querySelector('button');
-//addEventLogger(body, 'capture');
-//addEventLogger(body, 'bubble');
-//addEventLogger(div, 'capture');
-//addEventLogger(div, 'bubble');
-//addEventLogger(button, 'capture');
-//addEventLogger(button, 'bubble');
+// addEventLogger(body, 'capture');
+// addEventLogger(body, 'bubble');
+// addEventLogger(div, 'capture');
+// addEventLogger(div, 'bubble');
+// addEventLogger(button, 'capture');
+// addEventLogger(button, 'bubble');
 
 // addEventLogger(body, 'capture');
 // addEventLogger(body, 'bubble');
@@ -115,32 +114,33 @@
 // addEventLogger(button, 'capture', 'stop!');
 // addEventLogger(button, 'bubble');
 
-/**Drag events, Focus events,Form event,Input device events,Media events,Progress events,Touch events*/
+/** Drag events, Focus events,Form event,Input device
+ * events,Media events,Progress events,Touch events */
 
 
-/**Work with events from code*/
-const button1 = document.querySelector('.button1');
-const button2 = document.querySelector('.button2');
-button1.addEventListener('click3', (e)=>{
-  console.log(`clicked button 1 ${e.detail.text}`)
-})
-button2.addEventListener('click', ()=>{
-  // old
-  // const event = document.createEvent('Event');
-  // event.initEvent('click', true, true);
-  // button1.dispatchEvent(event);
-  //
-  // new
-  // const event = new Event('click3');
-  // button1.dispatchEvent(event);
-  //
-  // with custom context
-  const event = new CustomEvent('click3', { detail: {text: 'i love JS'} });
-  button1.dispatchEvent(event);
-})
-
-setTimeout(()=>{
-  const event = document.createEvent('Event');
-  event.initEvent('click3', true, true);
-  button1.dispatchEvent(event);
-},3000)
+/** Work with events from code */
+// const button1 = document.querySelector('.button1');
+// const button2 = document.querySelector('.button2');
+// button1.addEventListener('click3', (e) => {
+//   console.log(`clicked button 1 ${e.detail.text}`);
+// });
+// button2.addEventListener('click', () => {
+// old
+// const event = document.createEvent('Event');
+// event.initEvent('click', true, true);
+// button1.dispatchEvent(event);
+//
+// new
+// const event = new Event('click3');
+// button1.dispatchEvent(event);
+//
+// with custom context
+//   const event = new CustomEvent('click3', { detail: { text: 'i love JS' } });
+//   button1.dispatchEvent(event);
+// });
+//
+// setTimeout(() => {
+//   const event = document.createEvent('Event');
+//   event.initEvent('click3', true, true);
+//   button1.dispatchEvent(event);
+// }, 3000);

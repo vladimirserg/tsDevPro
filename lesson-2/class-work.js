@@ -42,7 +42,7 @@
 //     console.log(val,key)
 // })
 
-//[1,2,3,4,5,6] -> [1,2] , [3,4] ...
+// [1,2,3,4,5,6] -> [1,2] , [3,4] ...
 
 // function BufferedArray(arr, bufferSize) {
 //     this[Symbol.iterator] = function () {
@@ -83,16 +83,16 @@
 // console.log(typeof String('asdaasd'))
 // console.log(typeof new String('asdaasd'))
 
-function spanThis(str, ...values) {
-    console.log(str, ...values)
-    return str.reduce((newStr, value, i) => {
-        if (!values[i]) {
-            return newStr;
-        }
-        newStr += `${value}<span>${values[i]}</span>`
-        return newStr
-    }, '')
-}
+// function spanThis(str, ...values) {
+//   console.log(str, ...values);
+//   return str.reduce((newStr, value, i) => {
+//     if (!values[i]) {
+//       return newStr;
+//     }
+//     newStr += `${value}<span>${values[i]}</span>`;
+//     return newStr;
+//   }, '');
+// }
 
 // let specialValue = "Jon";
 // let a = 7;
@@ -112,10 +112,10 @@ function spanThis(str, ...values) {
 // let title = spanThis`hi ${specialValue} your number is ${a}`;
 // let result = title.replace(/Jon/,(s)=>{
 //     return `<span>${s}</span>`
-// }) 
+// })
 // console.log(result);
 
-let pattern = /.(ts|tsx)$/
-console.log(pattern.test('app-hello.ts'))
-console.log(pattern.test('app.tsx'))
-console.log(pattern.test('app.js'))
+// const pattern = /.(ts|tsx)$/;
+// console.log(pattern.test('app-hello.ts'));
+// console.log(pattern.test('app.tsx'));
+// console.log(pattern.test('app.js'));

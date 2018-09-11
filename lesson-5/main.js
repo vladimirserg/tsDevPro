@@ -19,7 +19,7 @@
 //
 // const http = new XMLHttpRequest();
 // const url = 'http://localhost:8090/test';
-const params = 'orem=ipsum&name=binny';
+// const params = 'orem=ipsum&name=binny';
 // http.open('POST', url);
 // //
 // //http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -32,12 +32,13 @@ const params = 'orem=ipsum&name=binny';
 // }
 // http.send(params);
 
-fetch('http://localhost:8090/test', {
-  method: 'POST',
-  body: params, headers: { 'Content-type': 'application/x-www-form-urlencoded' }
-})
-  .then((res) => res.json())
-  .then((data) => console.log(data))
+// fetch('http://localhost:8090/test', {
+//   method: 'POST',
+//   body: params,
+//   headers: { 'Content-type': 'application/x-www-form-urlencoded' },
+// })
+//   .then(res => res.json())
+//   .then(data => console.log(data));
 // fetch('http://localhost:8090/products', {
 //   method: 'GET',
 // })

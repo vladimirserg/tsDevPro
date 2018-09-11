@@ -63,45 +63,44 @@
 // });
 
 
-window.addEventListener('DOMContentLoaded', ()=> {
-  let outputDiv = document.getElementById('vResults');
-  let firstName = document.getElementById('firstName');
-  let submitBtn = document.getElementById('submitBtn');
-  let nameForm = document.getElementById('nameForm');
-  firstName.addEventListener("focus", ()=> {
-    outputDiv.innerHTML = '';
-  });
-
-  function preventDefaultHandler(evt) {
-    evt.preventDefault();
-  }
-  firstName.addEventListener('invalid', (event)=> {
-    outputDiv.innerHTML = 'firstName is invalid';
-  });
-  submitBtn.addEventListener('invalid', (event)=> {
-    const formToJSON = elements => [].reduce.call(elements, (data, element) => {
-      data[element.name] = element.value;
-      return data;
-    }, {});
-    console.log(formToJSON(nameForm.elements))
-  });
-  document.getElementById('firstNameBtn')
-    .addEventListener('click', ()=> {
-      firstName.checkValidity();
-    });
-  document.getElementById('formBtn')
-    .addEventListener('click', ()=> {
-      console.log()
-      document.getElementById('nameForm')
-        .checkValidity();
-    });
-  document.getElementById('preventBtn')
-    .addEventListener('click', ()=> {
-      firstName.addEventListener('invalid', preventDefaultHandler);
-    });
-  document.getElementById('restoreBtn')
-    .addEventListener('click', ()=> {
-      firstName.removeEventListener('invalid', preventDefaultHandler);
-    });
-});
-
+// window.addEventListener('DOMContentLoaded', () => {
+//   const outputDiv = document.getElementById('vResults');
+//   const firstName = document.getElementById('firstName');
+//   const submitBtn = document.getElementById('submitBtn');
+//   const nameForm = document.getElementById('nameForm');
+//   firstName.addEventListener('focus', () => {
+//     outputDiv.innerHTML = '';
+//   });
+//
+//   function preventDefaultHandler(evt) {
+//     evt.preventDefault();
+//   }
+//   firstName.addEventListener('invalid', (event) => {
+//     outputDiv.innerHTML = 'firstName is invalid';
+//   });
+//   submitBtn.addEventListener('invalid', (event) => {
+//     const formToJSON = elements => [].reduce.call(elements, (data, element) => {
+//       data[element.name] = element.value;
+//       return data;
+//     }, {});
+//     console.log(formToJSON(nameForm.elements));
+//   });
+//   document.getElementById('firstNameBtn')
+//     .addEventListener('click', () => {
+//       firstName.checkValidity();
+//     });
+//   document.getElementById('formBtn')
+//     .addEventListener('click', () => {
+//       console.log();
+//       document.getElementById('nameForm')
+//         .checkValidity();
+//     });
+//   document.getElementById('preventBtn')
+//     .addEventListener('click', () => {
+//       firstName.addEventListener('invalid', preventDefaultHandler);
+//     });
+//   document.getElementById('restoreBtn')
+//     .addEventListener('click', () => {
+//       firstName.removeEventListener('invalid', preventDefaultHandler);
+//     });
+// });
