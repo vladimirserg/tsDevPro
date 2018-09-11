@@ -10,12 +10,8 @@
   "devDependencies": {
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
-<<<<<<< HEAD
-    "eslint-plugin-import": "^2.14.0"
-=======
     "eslint-plugin-import": "^2.14.0",
     "pre-commit": "^1.2.2"
->>>>>>> upstream/master
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
