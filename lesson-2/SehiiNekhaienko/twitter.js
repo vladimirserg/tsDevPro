@@ -1,6 +1,6 @@
 function validateTwitter(nickname) {
-    let expression = /^(\@)?([\w_\.]+)$/;
-    return expression.test(nickname);
+  const expression = /^(\@)?([\w_\.]+)$/;
+  return expression.test(nickname);
 }
 
 

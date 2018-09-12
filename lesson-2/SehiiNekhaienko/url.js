@@ -1,6 +1,6 @@
 function validateUrl(url) {
-    let expression = /^(https?)\:\/\/([\w\.]+)([\/\w_\-]+)?$/;
-    return expression.test(url);
+  const expression = /^(https?)\:\/\/([\w\.]+)([\/\w_\-]+)?$/;
+  return expression.test(url);
 }
 
 

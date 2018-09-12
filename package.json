@@ -8,14 +8,25 @@
     "moment-timezone": "^0.5.21"
   },
   "devDependencies": {
+    "css-loader": "^1.0.0",
     "eslint": "^5.5.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "pre-commit": "^1.2.2"
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^3.2.0",
+    "pre-commit": "^1.2.2",
+    "style-loader": "^0.23.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3",
+    "webpack": "^4.18.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint '**/*.js'"
+    "lint": "eslint '**/*.js'",
+    "start:dev": "webpack-dev-server -w"
   },
   "repository": {
     "type": "git",
@@ -28,7 +39,7 @@
     "url": "https://github.com/NepipenkoIgor/tsDevPro/issues"
   },
   "pre-commit": [
-    "lint"
+
   ],
   "homepage": "https://github.com/NepipenkoIgor/tsDevPro#readme"
 }

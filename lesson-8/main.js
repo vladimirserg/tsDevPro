@@ -365,3 +365,4 @@
 // //     return this.split('').reverse().join('');
 // //   }
 // // }
+const b = { a: 1 };
