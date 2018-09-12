@@ -38,8 +38,6 @@
   "bugs": {
     "url": "https://github.com/NepipenkoIgor/tsDevPro/issues"
   },
-  "pre-commit": [
-
-  ],
+  "pre-commit": [],
   "homepage": "https://github.com/NepipenkoIgor/tsDevPro#readme"
 }
