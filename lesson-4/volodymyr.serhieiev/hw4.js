@@ -9,11 +9,7 @@ list.addEventListener('click', (e) => {
   const target = e.target;
   const el = target.parentNode;
   if (el.nextElementSibling !== null && el.nextElementSibling.nodeName === 'UL') {
-    if (el.nextElementSibling.classList.contains('d-none')) {
-      el.nextElementSibling.classList.remove('d-none');
-    } else {
-      el.nextElementSibling.classList.add('d-none');
-    }
+    el.nextElementSibling.classList.toggle('d-none');
   }
 });
 
@@ -35,12 +31,10 @@ list.addEventListener('click', (e) => {
 const commentsList = document.querySelector('.comments');
 commentsList.addEventListener('click', (e) => {
   const target = e.target;
-  if (target.classList.contains('close')) {
-    /* hide */
-    target.parentNode.parentNode.classList.add('d-none');
-    /* remove */
-    /* commentsList.removeChild(target.parentNode.parentNode); */
-  }
+  /* hide */
+  target.parentNode.parentNode.classList.toggle('d-none', true);
+  /* remove */
+  /* commentsList.removeChild(target.parentNode.parentNode); */
 });
 
 
