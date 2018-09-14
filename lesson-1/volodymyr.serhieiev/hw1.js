@@ -13,10 +13,16 @@ console.log(isInArray([1, 8, 20, 3, 6, 9], 1, 20, 9));
     Аргументы могут быть либо строкового либо числового типа. Количество их не ограничено
 */
 function summator(...args) {
-  return args.reduce((prev, curr) => prev + curr);
+  return args.reduce((prev, curr, index) => {
+    if (index === 1) {
+      prev = isNaN(prev) ? 0 : +prev;
+    }
+    curr = isNaN(curr) ? 0 : +curr;
+    return parseInt(prev) + parseInt(curr);
+  });
 }
 
-console.log(summator(1, 8, 20, 3, 6, 9));
+console.log(summator('ss1', 'sgs', 20, 3, 6, 9, 's'));
 
 /* 3
     Написать функцию getUnique(arr), которая принимает аргументом неограниченое число аргументов,
