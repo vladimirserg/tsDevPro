@@ -7,19 +7,22 @@ function next(node) {
       return nextNode;
     }
     return node;
-  } catch (err) {
-    return 'Node not found!';
+  } catch (e) {
+    return Error('Node not found!');
   }
 }
 
-// console.log(next(), next('h5'), next('h1'));
+// console.log(next('h1'));
 
 /* 2) Реализовать функцию addClass(node, classToAdd). Класс не должен добавляться, если у элемента уже есть такой. */
 function addClass(node, classToAdd) {
   const el = document.querySelector(node);
-  if (!el.hasAttribute('class', classToAdd)) {
-    el.setAttribute('class', classToAdd);
+
+  if (el.getAttribute('class') === null || el.getAttribute('class') === '') {
+    return el.setAttribute('class', classToAdd);
   }
+
+  return el.setAttribute('class', (el.getAttribute('class') + ' ' + classToAdd));
 }
 
 // addClass('h2', 'cover-heading');
