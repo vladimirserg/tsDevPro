@@ -1,16 +1,12 @@
 /* 1) Реализовать функцию next(node), которая вернет следующий узел, не учитывая текстовые узлы и узлы комментариев.
 */
 function next(node) {
-  try {
     const nextNode = document.querySelector(node).nextElementSibling;
     if (nextNode.nodeType !== 3 && nextNode.nodeType !== 8) {
       return nextNode;
     }
-    return node;
-  } catch (e) {
     return Error('Node not found!');
   }
-}
 
 // console.log(next('h1'));
 
@@ -32,8 +28,22 @@ function addClass(node, classToAdd) {
 function removeClass(node, classToRemove) {
   const el = document.querySelectorAll(node);
   el.forEach((element) => {
-    if (element.hasAttribute('class', classToRemove)) {
-      element.removeAttribute('class', classToRemove);
+    if (element.hasAttribute('class')) {
+      let classList = element.getAttribute('class').split(' ');
+
+      if (classList.includes(classToRemove)) {
+        classList.forEach((item, index) => {
+          if (item === classToRemove) {
+            classList.splice(index, 1);
+          }
+        });
+
+        if(classList.length > 0) {
+          element.setAttribute('class', classList.join(' '));
+        } else {
+          element.removeAttribute('class');
+        }
+      }
     }
   });
 }
@@ -53,17 +63,18 @@ function hasClass(node, classToCheck) {
 function closest(node, testFunc) {
   const elem = document.querySelector(node).parentElement;
 
-  if (elem !== null) {
-    return elem;
+  function testFunc(node) {
+      return (node.nodeType !== node.TEXT_NODE);
   }
-
-  if (!testFunc(elem)) {
-    return closest(elem, testFunc);
+  
+  let node = document.querySelector(element);
+  while(testFunc(node.parentElement) === false || node === undefined) {
+      node = node.parentElement;
   }
   return null;
 }
 
-// console.log(closest('ul'), closest('h2'));
+ // console.log(closest('ul'), closest('h2'));
 
 /* 6)Релизовать функцию createList(listData, listContainer, itemContainer), возвращаюшую узел списка. Использовать innerHTML нельзя.
  Второй и третий аргументы не обязательные. Значения по умолчанию для них - ul и li. listData - массив.
@@ -73,11 +84,15 @@ function createList(listData, listContainer = 'ul', itemContainer = 'li') {
   if (listData.lenght === 0) {
     return false;
   }
+  return addList(listData, listContainer, itemContainer);
+}
 
+function addList(listData, listContainer = 'ul', itemContainer = 'li') {
   const list = document.createElement(listContainer);
   listData.forEach((elem) => {
     if (Array.isArray(elem)) {
-      list.appendChild(createList(elem));
+      let li = list.appendChild(document.createElement(itemContainer));
+      li.appendChild(createList(elem, listContainer, itemContainer));
     } else {
       list.appendChild(document.createElement(itemContainer)).textContent = elem;
     }
